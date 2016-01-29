@@ -15,9 +15,21 @@ def solution1(list):
 				list[i] = t					
 	return list
 
-#minm = min(minm,ord(list[j][0]))
-#print (str(ord(list[i][0])) + " " + str(ord(list[j][0])))
+# Rock Paper Scissors
+# Determine which player wins a game of RPS based on a record of the game
+#
+# Example:
+#  Input data:
+#   3
+#   SS PR
+#   PR RS PS PP SP
+#   PS RR PS RP
+#
+#  Correct output:
+#   1 1 2
 
+def solution2(list):
+	return
 
 # IGNORE EVERYTHING BELOW THIS LINE
 
@@ -25,6 +37,12 @@ def solution1_harness():
 	list = [ "horse", "dog", "snake", "cat" ]
 	ret = solution1(list)
 	assert ret == [ "cat", "dog", "horse", "snake" ]
+	return ret
+
+def solution2_harness():
+	list = [ 3, [ "SS", "PR" ], [ "PR", "RS", "PS", "PP", "SP" ], [ "PS", "RR", "PS", "RP" ] ]
+	ret = solution2(list)
+	assert ret == [ 1, 1, 2 ]
 	return ret
 
 import sys
