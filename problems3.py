@@ -31,6 +31,18 @@ def solution1(list):
 def solution2(list):
 	return
 
+# Print hex str
+# Print a string in hexadecimal
+#
+# input: "A0!"
+# output: "413021"
+#
+# input: "Hi, People"
+# output: "48692C2050656F706C65"
+
+def solution3(str):
+	return
+
 # IGNORE EVERYTHING BELOW THIS LINE
 
 def solution1_harness():
@@ -43,6 +55,13 @@ def solution2_harness():
 	list = [ 3, [ "SS", "PR" ], [ "PR", "RS", "PS", "PP", "SP" ], [ "PS", "RR", "PS", "RP" ] ]
 	ret = solution2(list)
 	assert ret == [ 1, 1, 2 ]
+	return ret
+
+def solution3_harness():
+	ret = solution3("A0!")
+	assert ret == "413021"
+	ret = solution3("Hi, People")
+	assert ret == "48692C2050656F706C65"
 	return ret
 
 import sys
