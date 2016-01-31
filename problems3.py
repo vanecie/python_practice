@@ -76,8 +76,30 @@ def solution3(string):
 #  31
 #  71
 
+def is_prime(number):
+	prime = True
+	for mod in range(2,number):
+		if number % mod == 0:
+			prime = False
+			break
+	return prime
+
+def reverse (number):
+	number_reversed_str = str(number)[::-1]
+	number_reversed = int(number_reversed_str)
+	return number_reversed
+
 def solution4(list):
-	return
+	output = []
+	for i in range(1,len(list)):
+		number = list[i]
+		while True:
+			if is_prime(number):
+				if is_prime(reverse(number)):
+					break
+			number = number + 1
+		output.append(number)
+	return output
 
 # IGNORE EVERYTHING BELOW THIS LINE
 
