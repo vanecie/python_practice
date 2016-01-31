@@ -51,6 +51,34 @@ def solution3(string):
 		lady = lady + str(ord(sexy)/16) + x
 	return lady
 
+# emirp prime
+#
+# Given a list of input integers, find a value greater
+# than or equal to that integer which is prime when
+# read as a string in both directions.
+#
+# For example, 13 and 31 are both prime numbers, so
+# if the input value given was '12', '13' would be
+# the proper output.
+#
+# The list passed into the function contains the
+# number of numbers to test, followed by the numbers
+# themselves.
+#
+# Input:
+#  3
+#  10
+#  20
+#  50
+#
+# Output:
+#  11
+#  31
+#  71
+
+def solution4(list):
+	return
+
 # IGNORE EVERYTHING BELOW THIS LINE
 
 def solution1_harness():
@@ -70,6 +98,11 @@ def solution3_harness():
 	assert ret == "413021"
 	ret = solution3("Hi, People")
 	assert ret == "48692C2050656F706C65"
+	return ret
+
+def solution4_harness():
+	ret = solution4([ 3, 10, 20, 50 ])
+	assert ret == [ 11, 31, 71 ]
 	return ret
 
 import sys
