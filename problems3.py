@@ -40,8 +40,16 @@ def solution2(list):
 # input: "Hi, People"
 # output: "48692C2050656F706C65"
 
-def solution3(str):
-	return
+def solution3(string):
+	lady = ""
+	for sexy in string:
+		x = ord(sexy) % 16
+		if x>=0 and x<=9:
+			x = str(x)
+		if x>=10 and x<=15:
+			x = chr(x+55)
+		lady = lady + str(ord(sexy)/16) + x
+	return lady
 
 # IGNORE EVERYTHING BELOW THIS LINE
 
