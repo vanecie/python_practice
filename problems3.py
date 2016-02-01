@@ -123,6 +123,39 @@ def solution4(list):
 		output.append(number)
 	return output
 
+# Knight's Tour
+#
+# 8 | - - - - - - - -
+# 7 | - - - - - - - -
+# 6 | - - 2 - 1 - - -
+# 5 | - 3 - - - 0 - -
+# 4 | - - - X - - - -   X - depicts the Knight's initial position here
+# 3 | - 4 - - - 7 - -   and digits - landing squares for 8 different jumps
+# 2 | - - 5 - 6 - - -
+# 1 | - - - - - - - -
+#   +-----------------
+#     a b c d e f g
+#
+# Given a board of dimensions NxM, and a removed square P,Q,
+# calculate a series of 'rotations' of the Knight such that
+# it would traverse every square in the board (except the
+# removed square) but only visit each square once.
+#
+# The answer assumes you will start at 0,0 and test rotations
+# in sequence, so for example rotation 0 would be the first
+# valid move. The board tested is 3x4 and the removed square
+# is at 3,2. The coordinates of the removed square are
+# 0-indexed.
+#
+# The input data is formatted like:
+# [ Board_N, Board_M, Removed_P, Removed_Q ]
+#
+# The output data should be formatted like:
+# [ Start_X, Start_Y, Rotation, Rotation, Rotation, ... ]
+
+def solution5(list):
+	return list
+
 # IGNORE EVERYTHING BELOW THIS LINE
 
 def solution1_harness():
@@ -147,6 +180,11 @@ def solution3_harness():
 def solution4_harness():
 	ret = solution4([ 3, 10, 20, 50 ])
 	assert ret == [ 11, 31, 71 ]
+	return ret
+
+def solution5_harness():
+	ret = solution5([ 3, 4, 3, 2 ])
+	assert ret == [ 0, 0, 0, 3, 6, 0, 3, 6, 3, 0, 6, 3 ]
 	return ret
 
 import sys
