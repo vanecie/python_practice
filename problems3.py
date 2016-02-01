@@ -14,7 +14,7 @@ def solution1(list):
 				list[new_index] = list[i]
 				list[i] = t					
 	return list
-
+	
 # Rock Paper Scissors
 # Determine which player wins a game of RPS based on a record of the game
 #
@@ -29,7 +29,29 @@ def solution1(list):
 #   1 1 2
 
 def solution2(list):
-	return
+	games = [ ]
+	for i in range(1,len(list)):
+		P1_wins = 0
+		P2_wins = 0 
+		for e in list[i]:
+			if e[0] == e[1]:
+				continue
+			if e[0] == "S" and e[1] == "P":
+				P1_wins = P1_wins + 1
+			elif e[0] == "P" and e[1] == "R":
+				P1_wins = P1_wins + 1
+			elif e[0] == "R" and e[1] == "S":
+				P1_wins = P1_wins + 1
+			else: 
+				P2_wins = P2_wins + 1
+		if P1_wins > P2_wins:
+			games.append(1)
+		else:
+			games.append(2)
+	return games
+			
+
+
 
 # IGNORE EVERYTHING BELOW THIS LINE
 
