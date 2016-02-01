@@ -31,6 +31,76 @@ def solution1(list):
 def solution2(list):
 	return
 
+# Print hex str
+# Print a string in hexadecimal
+#
+# input: "A0!"
+# output: "413021"
+#
+# input: "Hi, People"
+# output: "48692C2050656F706C65"
+
+def solution3(string):
+	lady = ""
+	for sexy in string:
+		x = ord(sexy) % 16
+		if x>=0 and x<=9:
+			x = str(x)
+		if x>=10 and x<=15:
+			x = chr(x+55)
+		lady = lady + str(ord(sexy)/16) + x
+	return lady
+
+# emirp prime
+#
+# Given a list of input integers, find a value greater
+# than or equal to that integer which is prime when
+# read as a string in both directions.
+#
+# For example, 13 and 31 are both prime numbers, so
+# if the input value given was '12', '13' would be
+# the proper output.
+#
+# The list passed into the function contains the
+# number of numbers to test, followed by the numbers
+# themselves.
+#
+# Input:
+#  3
+#  10
+#  20
+#  50
+#
+# Output:
+#  11
+#  31
+#  71
+
+def is_prime(number):
+	prime = True
+	for mod in range(2,number):
+		if number % mod == 0:
+			prime = False
+			break
+	return prime
+
+def reverse (number):
+	number_reversed_str = str(number)[::-1]
+	number_reversed = int(number_reversed_str)
+	return number_reversed
+
+def solution4(list):
+	output = []
+	for i in range(1,len(list)):
+		number = list[i]
+		while True:
+			if is_prime(number):
+				if is_prime(reverse(number)):
+					break
+			number = number + 1
+		output.append(number)
+	return output
+
 # IGNORE EVERYTHING BELOW THIS LINE
 
 def solution1_harness():
@@ -43,6 +113,18 @@ def solution2_harness():
 	list = [ 3, [ "SS", "PR" ], [ "PR", "RS", "PS", "PP", "SP" ], [ "PS", "RR", "PS", "RP" ] ]
 	ret = solution2(list)
 	assert ret == [ 1, 1, 2 ]
+	return ret
+
+def solution3_harness():
+	ret = solution3("A0!")
+	assert ret == "413021"
+	ret = solution3("Hi, People")
+	assert ret == "48692C2050656F706C65"
+	return ret
+
+def solution4_harness():
+	ret = solution4([ 3, 10, 20, 50 ])
+	assert ret == [ 11, 31, 71 ]
 	return ret
 
 import sys
